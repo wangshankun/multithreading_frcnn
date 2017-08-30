@@ -86,8 +86,8 @@ def demo(net, image_name):
     timer.toc()
     print ('Detection took {:.3f}s for '
            '{:d} object proposals').format(timer.total_time, boxes.shape[0])
-#    print scores
-#    return
+    print scores
+    return
     # Visualize detections for each class
     CONF_THRESH = 0.8
     NMS_THRESH = 0.3
@@ -149,4 +149,4 @@ if __name__ == '__main__':
     for im_name in im_names:
         demo(net, im_name)
 
-    plt.show()
+#    plt.show()
