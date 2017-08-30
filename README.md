@@ -1,4 +1,4 @@
-### code form
+### Code form
 - org code from  https://github.com/rbgirshick/py-faster-rcnn.git
 
 ### Add fucntion
@@ -28,7 +28,7 @@
     add:        westwell/
 
 
-###compile:
+### Compile:
 
 - cd multithreading_frcnn/caffe-fast-rcnn
 
@@ -38,6 +38,6 @@
 
   make
 
-###exec:
--  ./tools/demo.py --cpu
+### Exec:
+  ./tools/demo.py --cpu
 
