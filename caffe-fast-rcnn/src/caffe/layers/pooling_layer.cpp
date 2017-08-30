@@ -16,8 +16,6 @@
         fclose (out);\
   }\
 } while(0)
-static int  scount;
-static char fname[32];
 
 using std::min;
 using std::max;

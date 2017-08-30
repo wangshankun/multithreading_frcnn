@@ -62,7 +62,7 @@ void roi_pool_inner_thread(void* set_args, int pos)
   const float* bottom_rois    = args -> bottom_rois;
   float*       top_data       = args -> top_data;
   int          num_rois       = args -> num_rois;
-  int          top_count      = args -> top_count;
+  //int          top_count      = args -> top_count;
   int          pooled_height_ = args -> pooled_height_;
   int          pooled_width_  = args -> pooled_width_;
   int          width_         = args -> width_;
@@ -185,7 +185,7 @@ clock_gettime(CLOCK_MONOTONIC, &start);
   const Dtype* bottom_rois = bottom[1]->cpu_data();
   // Number of ROIs
   int num_rois = bottom[1]->num();
-  int batch_size = bottom[0]->num();
+  //int batch_size = bottom[0]->num();
   int top_count = top[0]->count();
   Dtype* top_data = top[0]->mutable_cpu_data();
   caffe_set(top_count, Dtype(-FLT_MAX), top_data);
@@ -199,11 +199,11 @@ clock_gettime(CLOCK_MONOTONIC, &start);
     queue_t           queue_Q[MAX_CPU_NUMBER];
     roi_pool_arg_t    ins_args;
     
-    ins_args.bottom_data    =  (float*)(bottom[0] -> cpu_data());
-    ins_args.bottom_rois    =  (float*)(bottom[1] -> cpu_data());
-    ins_args.top_data       =  (float*)(top[0] -> mutable_cpu_data());
-    ins_args.num_rois       =  bottom[1] -> num();
-    ins_args.top_count      =  top[0] -> count();
+    ins_args.bottom_data    =  (float*)(bottom_data);
+    ins_args.bottom_rois    =  (float*)(bottom_rois);
+    ins_args.top_data       =  (float*)(top_data);
+    ins_args.num_rois       =  num_rois;
+    ins_args.top_count      =  top_count;
     ins_args.pooled_height_ =  pooled_height_;
     ins_args.pooled_width_  =  pooled_width_;
     ins_args.width_         =  width_;

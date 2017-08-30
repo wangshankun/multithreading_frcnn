@@ -15,10 +15,6 @@
   }\
 } while(0)
 
-
-static int  scount;
-static char fname[32];
-
 typedef struct {
     float*  bottom_data;
     float*  top_data;
