@@ -76,7 +76,8 @@ def demo(net, image_name):
     # Load the demo image
     #im_file = os.path.join(cfg.DATA_DIR, 'demo', image_name)
     #im_file = '/home/hd/py-faster-rcnn/westwell/digits4.bmp'
-    im_file = '/home/hd/8_29_py-faster-rcnn/westwell/00001.bmp'
+    cur_exe_dir =  os.path.split(os.path.realpath(__file__))[0]
+    im_file     = cur_exe_dir + '/../westwell/00001.bmp'
     im = cv2.imread(im_file)
 
     # Detect all object classes and regress object bounds
@@ -121,8 +122,10 @@ if __name__ == '__main__':
 
     args = parse_args()
 
-    prototxt = '/home/hd/8_29_py-faster-rcnn/westwell/faster_rcnn_test.pt'
-    caffemodel = '/home/hd/8_29_py-faster-rcnn/westwell/ZF512_bn_faster_rcnn_final.caffemodel'
+    cur_exe_dir =  os.path.split(os.path.realpath(__file__))[0]
+    prototxt   = cur_exe_dir + '/../westwell/faster_rcnn_test.pt'
+    caffemodel = cur_exe_dir + '/../westwell/ZF512_bn_faster_rcnn_final.caffemodel'
+
     if not os.path.isfile(caffemodel):
         raise IOError(('{:s} not found.\nDid you run ./data/script/'
                        'fetch_faster_rcnn_models.sh?').format(caffemodel))
