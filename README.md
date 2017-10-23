@@ -40,5 +40,5 @@
   make
 
 ### Exec:
-  ./tools/demo.py --cpu
+  python ./tools/demo.py --cpu
 
