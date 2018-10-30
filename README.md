@@ -1,4 +1,4 @@
-# faster-rcnn: add multithreading for caffe layer:pooling_layer,relu_layer,roi_pooling_layer,im2col
+## faster-rcnn: multithreading for caffe layer:pooling_layer,relu_layer,roi_pooling_layer,im2col
 ## 8 processors CPU(i7-6700) layer speed up x5 ~ x7,(except im2col(x2.5) DDR4 is the bottlenecks )
 - org code from  https://github.com/rbgirshick/py-faster-rcnn.git
 
